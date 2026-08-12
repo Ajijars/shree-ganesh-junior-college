@@ -3,6 +3,7 @@
 
 $ErrorActionPreference = "Stop"
 $RepoName = "shree-ganesh-junior-college"
+$GitHubUser = "Ajijars"
 $ProjectDir = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 
 Set-Location $ProjectDir
@@ -16,7 +17,8 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-$username = gh api user -q .login
+$username = gh api user -q .login 2>$null
+if (-not $username) { $username = $GitHubUser }
 Write-Host "Logged in as: $username" -ForegroundColor Green
 
 Write-Host "`n=== Step 2: Create GitHub repo & push ===" -ForegroundColor Cyan
