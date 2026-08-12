@@ -246,11 +246,6 @@ export const galleryImages = [
     alt: "IIT, Medical and JEE Mains 2024 Results",
     caption: "Results Highlights",
   },
-  {
-    src: "/images/ssc-results-2022-newspaper.png",
-    alt: "Punya Nagari newspaper — Shree Ganesh 100% SSC results 2022",
-    caption: "SSC 100% Results — Punya Nagari",
-  },
 ];
 
 export const resultBanners = [
@@ -293,6 +288,13 @@ export const jeeMains2023Toppers = [
   { name: "Pranjal Shete", score: "94.68%" },
   { name: "Riddhi Lahare", score: "94.22%" },
   { name: "Biraj Gorde", score: "86.12%" },
+  { name: "Suraj Khaire", score: "84.46%" },
+  { name: "Aditya Mehetre", score: "84.30%" },
+  { name: "Siddhesh Dabange", score: "83.83%" },
+  { name: "Avishkar Fatangare", score: "81.84%" },
+  { name: "Aman Jaiswar", score: "81.84%" },
+  { name: "Ajit Chavan", score: "81.62%" },
+  { name: "Prerna Bhamare", score: "80.59%" },
 ];
 
 export const iitSelection2023 = [
