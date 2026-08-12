@@ -246,6 +246,11 @@ export const galleryImages = [
     alt: "IIT, Medical and JEE Mains 2024 Results",
     caption: "Results Highlights",
   },
+  {
+    src: "/images/ssc-results-2022-newspaper.png",
+    alt: "Punya Nagari newspaper — Shree Ganesh 100% SSC results 2022",
+    caption: "SSC 100% Results — Punya Nagari",
+  },
 ];
 
 export const resultBanners = [
@@ -324,6 +329,26 @@ export const jeeMains2024Toppers = [
   { name: "Vaishnavi Katkar", score: "80.23%" },
 ];
 
+export const sscResults2022 = {
+  headline: "100% Results — 3rd Consecutive Year",
+  source: "Punya Nagari — Smart Shrirampur, 20 June 2022",
+  institution: "Shree Ganesh International School, Korhale",
+  stats: {
+    appeared: 54,
+    pass: "100%",
+    distinction: 42,
+    firstClass: 11,
+    secondClass: 1,
+  },
+  toppers: [
+    { name: "Chaitanya Ravindra Gade", score: "96.4%" },
+    { name: "Gayatri Ravindra Gunjal", score: "95.8%" },
+    { name: "Siddhi Vishnu Karekar", score: "94%" },
+    { name: "Arthav Rajesh Gaikwad", score: "93.2%" },
+  ],
+  newspaperImage: "/images/ssc-results-2022-newspaper.png",
+};
+
 export const results = {
   board2025: {
     science: { pass: "98%", distinction: "72%", topScore: "96.40%" },
@@ -334,7 +359,7 @@ export const results = {
     { exam: "IIT Selection 2023", achievement: "Ridhi Lahare (Rank 3114) · Sai Gavli (Rank 4645)" },
     { exam: "MH-CET 2022", achievement: "44 students with outstanding PCM/PCB percentiles" },
     { exam: "NEET 2022", achievement: "Top score 582/720 — Akash Jagtap" },
-    { exam: "Medical 2022", achievement: "3 students placed in reputed medical colleges" },
+    { exam: "SSC 2022", achievement: "100% pass — 3rd consecutive year (42 distinctions out of 54 students)" },
   ],
   toppers: [
     { name: "Om Malusare", stream: "JEE Mains 2024", score: "97.20%" },

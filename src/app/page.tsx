@@ -7,6 +7,7 @@ import {
   Users,
   Building2,
   Bell,
+  Newspaper,
 } from "lucide-react";
 import ImageGallery from "@/components/ImageGallery";
 import LeadershipCard from "@/components/LeadershipCard";
@@ -18,6 +19,7 @@ import {
   leadership,
   visionMission,
   galleryImages,
+  sscResults2022,
 } from "@/data/college";
 
 export default function HomePage() {
@@ -89,6 +91,63 @@ export default function HomePage() {
               <p className="mt-1 text-sm text-stone-600">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* In the News — Newspaper Clipping */}
+      <section className="bg-gradient-to-br from-amber-50 via-white to-orange-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="section-heading flex items-center justify-center gap-3">
+            <Newspaper className="h-8 w-8 text-amber-600" />
+            In the News
+          </h2>
+          <p className="section-subheading">
+            Featured in Punya Nagari — {sscResults2022.headline}
+          </p>
+          <div className="mt-10 grid items-center gap-8 lg:grid-cols-2">
+            <div className="group relative overflow-hidden rounded-2xl border-2 border-amber-200 bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-amber-400">
+              <div className="absolute left-4 top-4 z-10 rounded-full bg-amber-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
+                📰 Punya Nagari
+              </div>
+              <Image
+                src={sscResults2022.newspaperImage}
+                alt="Punya Nagari newspaper — Shree Ganesh 100% SSC results 3rd consecutive year"
+                width={800}
+                height={600}
+                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="space-y-6">
+              <div className="rounded-2xl border border-amber-200 bg-white/80 p-6 shadow-md backdrop-blur-sm">
+                <h3 className="font-display text-2xl font-bold text-brand-900">
+                  🏆 {sscResults2022.headline}
+                </h3>
+                <p className="mt-2 text-stone-600">
+                  {sscResults2022.institution} achieved <strong>100% pass rate</strong> in SSC Board exams
+                  for the <strong>3rd consecutive year</strong>, with <strong>{sscResults2022.stats.distinction} distinctions</strong> out
+                  of {sscResults2022.stats.appeared} students.
+                </p>
+                <p className="mt-3 text-sm italic text-stone-500">
+                  — {sscResults2022.source}
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl border border-brand-100 bg-white p-4 text-center shadow-sm">
+                  <p className="font-display text-3xl font-bold text-brand-600">{sscResults2022.stats.pass}</p>
+                  <p className="text-xs text-stone-500">Pass Rate</p>
+                </div>
+                <div className="rounded-xl border border-brand-100 bg-white p-4 text-center shadow-sm">
+                  <p className="font-display text-3xl font-bold text-brand-600">{sscResults2022.stats.distinction}</p>
+                  <p className="text-xs text-stone-500">Distinctions</p>
+                </div>
+              </div>
+              <Link href="/results" className="btn-primary inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600">
+                View All Results
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

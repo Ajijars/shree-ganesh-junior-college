@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Trophy, TrendingUp, GraduationCap, Stethoscope } from "lucide-react";
+import Image from "next/image";
+import { Trophy, TrendingUp, GraduationCap, Stethoscope, Newspaper } from "lucide-react";
 import ResultBanner from "@/components/ResultBanner";
 import {
   results,
@@ -9,6 +10,7 @@ import {
   iitSelection2023,
   medicalSelection2022,
   jeeMains2024Toppers,
+  sscResults2022,
 } from "@/data/college";
 
 export const metadata: Metadata = {
@@ -41,6 +43,66 @@ export default function ResultsPage() {
               priority={i === 0}
             />
           ))}
+        </div>
+      </section>
+
+      {/* SSC 10th Results — Newspaper */}
+      <section className="bg-brand-50 py-16">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="section-heading flex items-center gap-2">
+            <Newspaper className="h-8 w-8 text-brand-600" />
+            SSC Board Results 2022
+          </h2>
+          <p className="section-subheading">
+            {sscResults2022.headline} — {sscResults2022.institution}. Featured in {sscResults2022.source}.
+          </p>
+
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-lg">
+              <Image
+                src={sscResults2022.newspaperImage}
+                alt="Punya Nagari newspaper — Shree Ganesh 100% SSC results"
+                width={800}
+                height={1000}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+
+            <div>
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-2">
+                <div className="card text-center">
+                  <p className="font-display text-3xl font-bold text-brand-600">{sscResults2022.stats.pass}</p>
+                  <p className="text-xs text-stone-500">Pass Rate</p>
+                </div>
+                <div className="card text-center">
+                  <p className="font-display text-3xl font-bold text-brand-600">{sscResults2022.stats.appeared}</p>
+                  <p className="text-xs text-stone-500">Students Appeared</p>
+                </div>
+                <div className="card text-center">
+                  <p className="font-display text-3xl font-bold text-brand-600">{sscResults2022.stats.distinction}</p>
+                  <p className="text-xs text-stone-500">Distinction</p>
+                </div>
+                <div className="card text-center">
+                  <p className="font-display text-3xl font-bold text-brand-600">3rd</p>
+                  <p className="text-xs text-stone-500">Year in a Row</p>
+                </div>
+              </div>
+
+              <h3 className="mt-8 font-display text-lg font-bold text-brand-900">SSC Toppers 2022</h3>
+              <div className="mt-4 space-y-3">
+                {sscResults2022.toppers.map((student, i) => (
+                  <div key={student.name} className="card flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Trophy className={`h-5 w-5 ${i === 0 ? "text-accent-500" : "text-brand-600"}`} />
+                      <span className="font-medium text-stone-800">{student.name}</span>
+                    </div>
+                    <span className="font-display font-bold text-brand-600">{student.score}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
