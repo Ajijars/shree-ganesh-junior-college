@@ -50,13 +50,27 @@ All college data lives in **`src/data/college.ts`**. Edit names, staff, syllabus
 - **Email:** contact@shreeganeshedu.in / shreeganeshdocument@gmail.com
 - **Instagram:** [@shreeganesh_official](https://www.instagram.com/shreeganesh_official/)
 
-## Build for Production
-
-```bash
-npm run build
-npm start
-```
-
 ## Deploy
 
-Deploy easily to [Vercel](https://vercel.com) — connect this folder and deploy.
+### Live site
+https://shree-ganesh-junior-college.vercel.app
+
+### Auto-deploy (GitHub → Vercel)
+
+1. Log in to GitHub once:
+   ```powershell
+   gh auth login
+   ```
+
+2. Run the setup script:
+   ```powershell
+   cd "C:\WTL project"
+   powershell -ExecutionPolicy Bypass -File .\scripts\setup-github-vercel.ps1
+   ```
+
+After setup, every `git push` to `main` automatically updates the live website.
+
+### Manual deploy (without Git push)
+```powershell
+npx vercel --prod --yes
+```
