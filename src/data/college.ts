@@ -246,6 +246,11 @@ export const galleryImages = [
     alt: "IIT, Medical and JEE Mains 2024 Results",
     caption: "Results Highlights",
   },
+  {
+    src: "/images/jee-mains-2023-results.png",
+    alt: "Shree Ganesh JEE Mains 2023 Phase 1 — Top scorers with percentiles",
+    caption: "JEE Mains 2023 Toppers",
+  },
 ];
 
 export const resultBanners = [
